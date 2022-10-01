@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  api-weather:
+    build: ./dockerfiles/nodejs
+    # para caso seja necessário aguardar alguma dependência subir [passos no Dockerfile]
+    # command: wait-for mongodb-weather:27017 -t40 -- tail -f /dev/null
+    environment:
+      - APP_PORT=3000
+      - MONGODB_URL=mongodb://mongoadmin:secret@mongodb-weather:27017/
+      - STORM_GLASS_API_URL=
+      - STORM_GLASS_API_TOKEN=
+      - JWT_SECRET_KEY=
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+
+  mongodb-weather:
+    image: mongo:5.0.6
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    volumes:
+      - ./mongo-data:/data
+    ports:
+      - 27017:27017
+
