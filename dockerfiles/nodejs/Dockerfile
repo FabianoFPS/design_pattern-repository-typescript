@@ -2,6 +2,8 @@ FROM node:16.17
 
 LABEL maintainer="Fabiano F. Stoffel <ffpthai@gmail.com>"
 
+# COPY keyboard /etc/default/
+
 WORKDIR /usr/src/app
 
 # para caso seja necessário aguardar alguma dependência subir [passos no docker-compose]

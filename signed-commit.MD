@@ -63,4 +63,10 @@ nano ~/.gnupg/gpg-agent.conf
 default-cache-ttl 86400
 gpgconf --reload gpg-agent
 
+git log --show-signature
+```
+Dockerfile:
+```Dockerfile
+RUN apt update && \
+    apt install --no-install-recommends -y gpg gnupg gpg-agent socat
 ```
