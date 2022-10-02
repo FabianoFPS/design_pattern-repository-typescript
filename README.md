@@ -39,6 +39,3 @@ as mudanças lado a lada.
 
 ## Como contribuir
 Em Construção (mas abra um Pull Request de qualquer maneira xD)
-
-# https://youtu.be/hTEmVxVM3p4?t=1379
-# https://frontendmasters.com/trial/
