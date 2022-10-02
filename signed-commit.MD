@@ -56,4 +56,5 @@ cat ~/.gnupg/gpg-agent.conf
 nano ~/.gnupg/gpg-agent.conf
 default-cache-ttl 86400
 gpgconf --reload gpg-agent
+
 ```
