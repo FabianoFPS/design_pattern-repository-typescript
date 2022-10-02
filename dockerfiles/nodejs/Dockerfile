@@ -13,6 +13,10 @@ WORKDIR /usr/src/app
 # Parear o id com o usuário da máquina "real" para evitar problemas de permissão. Consultar com cat /etc/passwd
 # RUN usermod -u 1001 node
 
+# Signed Commit
+RUN apt update && \
+    apt install --no-install-recommends -y gpg gnupg gpg-agent socat
+
 USER node
 
 EXPOSE 3000

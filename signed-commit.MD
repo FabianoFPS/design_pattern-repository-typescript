@@ -1,6 +1,11 @@
-```bash
+# Assinado Commits
 
-# https://docs.github.com/pt/authentication/managing-commit-signature-verification
+## Referências
+[Assinatura de commits no Remote Container do VSCode](https://youtu.be/5IPrjAEqfQ0)
+
+[Documentação no github](https://docs.github.com/pt/authentication/managing-commit-signature-verification)
+
+```bash
 gpg --full-generate-key 
 gpg (GnuPG) 2.2.19; Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
@@ -46,8 +51,9 @@ sec   rsa4096/**************** 2022-10-02 [SC] [expires: 2022-11-01] ...
 
 gpg --armor --export ****************
 
-# pode ser local ou global
+# pode ser local ou global & garantir o mesmo email da chave gpg com o email do commit
 git config --local commit.gpgsign true
+git config --local user.email "fabiano.stoffel@gmail.com"
 git config --local --list
 git config --global user.signingkey ****************
 git config --global --list
